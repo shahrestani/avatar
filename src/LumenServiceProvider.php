@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravolt\Avatar;
+namespace Shahrestani\Avatar;
 
 use Laravel\Lumen\Application;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
@@ -25,7 +25,7 @@ class LumenServiceProvider extends BaseServiceProvider
             $config = $app->make('config');
             $cache = $app->make('cache.store');
 
-            $avatar = new Avatar($config->get('laravolt.avatar'), $cache);
+            $avatar = new Avatar($config->get('shahrestani.avatar'), $cache);
             $avatar->setGenerator($app['avatar.generator']);
 
             return $avatar;
@@ -33,7 +33,7 @@ class LumenServiceProvider extends BaseServiceProvider
 
         $this->app->bind('avatar.generator', function (Application $app) {
             $config = $app->make('config');
-            $class = $config->get('laravolt.avatar.generator');
+            $class = $config->get('shahrestani.avatar.generator');
 
             return new $class;
         });
@@ -61,8 +61,8 @@ class LumenServiceProvider extends BaseServiceProvider
      */
     protected function registerConfigurations()
     {
-        $this->mergeConfigFrom($this->packagePath('config/config.php'), 'laravolt.avatar');
-        $this->publishes([$this->packagePath('config/config.php') => config_path('laravolt/avatar.php')], 'config');
+        $this->mergeConfigFrom($this->packagePath('config/config.php'), 'shahrestani.avatar');
+        $this->publishes([$this->packagePath('config/config.php') => config_path('shahrestani/avatar.php')], 'config');
     }
 
     /**
