@@ -8,6 +8,8 @@
 
 Display unique avatar for any user based on their (initials) name.
 
+forked from laravolt/avatar
+
 ## Preview
 ![Preview](https://cloud.githubusercontent.com/assets/149716/26735022/6dbd77e2-47ea-11e7-8a05-7772465309c5.png)
 
