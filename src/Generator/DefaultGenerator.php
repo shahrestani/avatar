@@ -37,7 +37,10 @@ class DefaultGenerator implements GeneratorInterface
         }
 
         if ($rtl) {
-            $initial = collect(mb_str_split($initial))->reverse()->implode('');
+            //            $initial = collect(mb_str_split($initial))->reverse()->implode('');
+            $is_arabic = preg_match('/\p{Arabic}/u', $initial);
+            $Arabic = new \ArPHP\I18N\Arabic();
+            $initial = $Arabic->utf8Glyphs($initial);
         }
 
         return $initial;
