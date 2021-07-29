@@ -1,13 +1,13 @@
 {
-    "name": "laravolt/avatar",
+    "name": "shahrestani/avatar",
     "description": "Turn name, email, and any other string into initial-based avatar or gravatar.",
     "keywords": [
         "laravel",
-        "laravolt",
+        "shahrestani",
         "avatar",
         "gravatar"
     ],
-    "homepage": "https://github.com/laravolt/avatar",
+    "homepage": "https://github.com/shahrestani/avatar",
     "license": "MIT",
     "authors": [
         {
@@ -32,12 +32,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Laravolt\\Avatar\\": "src"
+            "Shahrestani\\Avatar\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Laravolt\\Avatar\\Test\\": "tests"
+            "Shahrestani\\Avatar\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -49,10 +49,10 @@
         },
         "laravel": {
             "providers": [
-                "Laravolt\\Avatar\\ServiceProvider"
+                "Shahrestani\\Avatar\\ServiceProvider"
             ],
             "aliases": {
-                "Avatar": "Laravolt\\Avatar\\Facade"
+                "Avatar": "Shahrestani\\Avatar\\Facade"
             }
         }
     }
