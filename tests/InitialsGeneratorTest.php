@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Laravolt\Avatar\Generator\DefaultGenerator;
+use Shahrestani\Avatar\Generator\DefaultGenerator;
 
 class InitialGeneratorTest extends TestCase
 {
