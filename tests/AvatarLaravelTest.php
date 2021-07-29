@@ -54,7 +54,7 @@ class AvatarLaravelTest extends \PHPUnit\Framework\TestCase
 
         $cache = Mockery::mock('Illuminate\Contracts\Cache\Repository');
 
-        $generator = Mockery::mock('Laravolt\Avatar\InitialGenerator');
+        $generator = Mockery::mock('Shahrestani\Avatar\InitialGenerator');
         $generator->shouldReceive('make')->andReturn('AB');
         $generator->shouldReceive('setUppercase');
         $generator->shouldReceive('setAscii');
@@ -70,7 +70,7 @@ class AvatarLaravelTest extends \PHPUnit\Framework\TestCase
     public function it_can_override_attributes_after_set_name()
     {
         $cache = Mockery::mock('Illuminate\Contracts\Cache\Repository');
-        $generator = Mockery::mock('Laravolt\Avatar\InitialGenerator');
+        $generator = Mockery::mock('Shahrestani\Avatar\InitialGenerator');
         $generator->shouldReceive('setName')->andReturnSelf();
         $generator->shouldReceive('setLength');
         $generator->shouldReceive('make')->andReturn('A');
@@ -97,7 +97,7 @@ class AvatarLaravelTest extends \PHPUnit\Framework\TestCase
 
         $cache = Mockery::mock('Illuminate\Contracts\Cache\Repository');
 
-        $generator = Mockery::mock('Laravolt\Avatar\InitialGenerator');
+        $generator = Mockery::mock('Shahrestani\Avatar\InitialGenerator');
         $generator->shouldReceive('setUppercase');
         $generator->shouldReceive('setAscii');
 
@@ -126,7 +126,7 @@ class AvatarLaravelTest extends \PHPUnit\Framework\TestCase
 
         $cache = Mockery::mock('Illuminate\Contracts\Cache\Repository');
 
-        $generator = Mockery::mock('Laravolt\Avatar\InitialGenerator');
+        $generator = Mockery::mock('Shahrestani\Avatar\InitialGenerator');
         $generator->shouldReceive('setUppercase');
         $generator->shouldReceive('setAscii');
 
