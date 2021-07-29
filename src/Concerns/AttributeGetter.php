@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Laravolt\Avatar\Concerns;
+namespace Shahrestani\Avatar\Concerns;
 
 trait AttributeGetter
 {
