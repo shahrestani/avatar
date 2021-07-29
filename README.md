@@ -143,7 +143,7 @@ return [
     'driver'    => 'gd',
 
     // Initial generator class
-    'generator' => \Laravolt\Avatar\Generator\DefaultGenerator::class,
+    'generator' => \Shahrestani\Avatar\Generator\DefaultGenerator::class,
 
     // Whether all characters supplied must be replaced with their closest ASCII counterparts
     'ascii'    => false,
