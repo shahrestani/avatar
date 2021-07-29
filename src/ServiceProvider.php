@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravolt\Avatar;
+namespace Shahrestani\Avatar;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
@@ -23,7 +23,7 @@ class ServiceProvider extends BaseServiceProvider
     {
         $this->app->bind('avatar', function (Application $app) {
             $cache = $app->make('cache.store');
-            $config = $app['config']->get('laravolt.avatar', []);
+            $config = $app['config']->get('shahrestani.avatar', []);
 
             $avatar = new Avatar($config, $cache);
             $avatar->setGenerator($app['avatar.generator']);
@@ -33,7 +33,7 @@ class ServiceProvider extends BaseServiceProvider
 
         $this->app->bind('avatar.generator', function (Application $app) {
             $config = $app->make('config');
-            $class = $config->get('laravolt.avatar.generator');
+            $class = $config->get('shahrestani.avatar.generator');
 
             return new $class;
         });
@@ -61,7 +61,7 @@ class ServiceProvider extends BaseServiceProvider
      */
     protected function registerConfigurations()
     {
-        $this->mergeConfigFrom($this->packagePath('config/config.php'), 'laravolt.avatar');
+        $this->mergeConfigFrom($this->packagePath('config/config.php'), 'shahrestani.avatar');
         $this->publishes([$this->packagePath('config/config.php') => config_path('laravolt/avatar.php')], 'config');
     }
 
