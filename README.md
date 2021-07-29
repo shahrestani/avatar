@@ -18,12 +18,12 @@ This package originally built for Laravel, but can also be used in any PHP proje
 
 ### Laravel >= 5.2:
 ```bash
-composer require laravolt/avatar
+composer require shahrestani/avatar
 ```
 
 ### Laravel 5.1:
 ```bash
-composer require laravolt/avatar ~0.3
+composer require shahrestani/avatar ~0.3
 ```
 
 ## Service Provider & Facade
@@ -34,19 +34,19 @@ Laravolt\Avatar\ServiceProvider::class,
 
 ...
 
-'Avatar'    => Laravolt\Avatar\Facade::class,
+'Avatar'    => Shahrestani\Avatar\Facade::class,
 ```
 
 ## Publish Config (optional)
 ```php
-php artisan vendor:publish --provider="Laravolt\Avatar\ServiceProvider"
+php artisan vendor:publish --provider="Shahrestani\Avatar\ServiceProvider"
 ```
-This will create config file located in `config/laravolt/avatar.php`.
+This will create config file located in `config/shahrestani/avatar.php`.
 
 ## Lumen Service Provider
 
 ```php
-$app->register(Laravolt\Avatar\LumenServiceProvider);
+$app->register(Shahrestani\Avatar\LumenServiceProvider);
 ```
 
 ## Usage
@@ -55,7 +55,7 @@ $app->register(Laravolt\Avatar\LumenServiceProvider);
 ```php
 //this will output data-uri (base64 image data)
 //something like data:image/png;base64,iVBORw0KGg....
-Avatar::create('Joko Widodo')->toBase64();
+Avatar::create('محمد')->toBase64();
 
 //use in view
 //this will display initials JW as an image
@@ -64,7 +64,7 @@ Avatar::create('Joko Widodo')->toBase64();
 
 ### Save as file
 ```php
-Avatar::create('Susilo Bambang Yudhoyono')->save('sample.png');
+Avatar::create('محمد')->save('sample.png');
 Avatar::create('Susilo Bambang Yudhoyono')->save('sample.jpg', 100); // quality = 100
 ```
 
@@ -281,7 +281,7 @@ Avatar::create('Habibie')->setDimension(50)->setFontSize(18)->toBase64();
 require 'vendor/autoload.php';
 
 // import the Avatar class
-use Laravolt\Avatar\Avatar;
+use Shahrestani\Avatar\Avatar;
 
 // create your first avatar
 $avatar = new Avatar($config);
