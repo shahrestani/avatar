@@ -30,7 +30,7 @@ composer require shahrestani/avatar ~0.3
 **Note: only for Laravel 5.4 and below, because since Laravel 5.5 we use package auto-discovery.**
 
 ```php
-Laravolt\Avatar\ServiceProvider::class,
+Shahrestani\Avatar\ServiceProvider::class,
 
 ...
 
