@@ -13,6 +13,8 @@ class DefaultGenerator implements GeneratorInterface
     {
         $this->setName($name, $ascii);
 
+        $is_arabic = preg_match('/\p{Arabic}/u', $this->name);
+
         $words = new Collection(explode(' ', $this->name));
 
         // if name contains single word, use first N character
@@ -22,6 +24,11 @@ class DefaultGenerator implements GeneratorInterface
             if (strlen($this->name) >= $length) {
                 $initial = Str::substr($this->name, 0, $length);
             }
+
+            if($is_arabic){
+                $Arabic = new \ArPHP\I18N\Arabic();
+                $initial = $Arabic->utf8Glyphs($initial);
+            }
         } else {
             // otherwise, use initial char from each word
             $initials = new Collection();
@@ -30,17 +37,18 @@ class DefaultGenerator implements GeneratorInterface
             });
 
             $initial = $initials->slice(0, $length)->implode('');
+
+            if($is_arabic){
+                $initial = collect(mb_str_split($initial))->reverse()->implode('');
+            }
         }
 
-        if ($uppercase) {
+        if ($uppercase && !$is_arabic) {
             $initial = strtoupper($initial);
         }
 
         if ($rtl) {
-            //            $initial = collect(mb_str_split($initial))->reverse()->implode('');
-            $is_arabic = preg_match('/\p{Arabic}/u', $initial);
-            $Arabic = new \ArPHP\I18N\Arabic();
-            $initial = $Arabic->utf8Glyphs($initial);
+//            $initial = collect(mb_str_split($initial))->reverse()->implode('');
         }
 
         return $initial;
