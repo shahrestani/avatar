@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravolt\Avatar\Generator;
+namespace Shahrestani\Avatar\Generator;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
