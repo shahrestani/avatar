@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravolt\Avatar;
+namespace Shahrestani\Avatar;
 
 class Facade extends \Illuminate\Support\Facades\Facade
 {
