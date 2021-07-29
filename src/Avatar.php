@@ -1,16 +1,16 @@
 <?php
 
-namespace Laravolt\Avatar;
+namespace Shahrestani\Avatar;
 
 use Illuminate\Cache\ArrayStore;
 use Illuminate\Contracts\Cache\Repository;
 use Intervention\Image\AbstractFont;
 use Intervention\Image\AbstractShape;
 use Intervention\Image\ImageManager;
-use Laravolt\Avatar\Concerns\AttributeGetter;
-use Laravolt\Avatar\Concerns\AttributeSetter;
-use Laravolt\Avatar\Generator\DefaultGenerator;
-use Laravolt\Avatar\Generator\GeneratorInterface;
+use Shahrestani\Avatar\Concerns\AttributeGetter;
+use Shahrestani\Avatar\Concerns\AttributeSetter;
+use Shahrestani\Avatar\Generator\DefaultGenerator;
+use Shahrestani\Avatar\Generator\GeneratorInterface;
 
 class Avatar
 {
